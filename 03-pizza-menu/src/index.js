@@ -46,7 +46,23 @@ const pizzaData = [
     soldOut: false,
   },
 ];
+// Separation Concern
+/**\Components
+ * Data
+ * Logic
+ * Appearance
+ */
 
+/**
+ *
+ *  Styling React App
+ * Inline
+ * External CSS
+ * SASS
+ * CSS Modules
+ * Styles-component
+ * Tailwind css
+ */
 function Header() {
   // const style = { color: "red", fontSize: "48px", textTransform: "uppercase" };
   const style = {};
