@@ -139,6 +139,22 @@ function Footer() {
   );
   // return React.createElement("footer", null, "We're currently Opened!");
 }
+/**
+ * Props : Are like arguments passed to regular Javascript function
+ * -- Props are used to pass data from parent components to chid components(down the component tree)
+ * -- Essential tool to configure and customize components (like function parameters)
+ * -- With props, parent components control how child components look and work
+ * -- Anything can be passed as props: single values, arrays, objects, functions, even other components
+ *
+ *  Props are "READ-ONLY"
+ *
+ * -- DATA in components are comprises of
+ *  1 - Props
+ *  2 - State
+ *
+ * Props are Immutables
+ * ONE-WAY DATA Flow : Data should come parents to child
+ */
 
 function Order(props) {
   return (
