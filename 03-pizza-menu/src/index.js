@@ -156,6 +156,22 @@ function Footer() {
  * ONE-WAY DATA Flow : Data should come parents to child
  */
 
+//RULES OF JXS
+/**
+ * JSX works essentially like HTML, but we can enter "JAVASCRIPT mode "
+ * by using {}(for text or attributes)
+ *
+ * We can place JavaScript expressions inside {}.
+ * Examples: reference variables, create arrays or objects,
+ * [].map(), ternary operator
+ *
+ * Statement are not allowed (if/else, for loop, switch)
+ *
+ * JSX produces a JavaScript expression
+ *
+ * A piece of JSX can only have one root element, if you need more, use <React.Fragment> (or the short <>)
+ */
+
 function Order(props) {
   return (
     <div className="order">
