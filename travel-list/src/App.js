@@ -22,10 +22,43 @@ function Logo() {
 }
 
 function Form() {
+  const [description, setDescription] = useState("");
+  const [quantity, setQuantity] = useState(1);
+
+  const options = Array.from({ length: 20 }, (_, i) => i + 1);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    if (!description) return;
+
+    const newItems = { description, quantity, packed: false, id: Date.now() };
+    console.log(newItems);
+
+    setDescription("");
+    setQuantity(1);
+  }
   return (
-    <div className="add-form">
+    <form className="add-form" onSubmit={handleSubmit}>
       <h3>What do you need for your 😊 trip?</h3>
-    </div>
+      <select
+        value={quantity}
+        onChange={(e) => setQuantity(Number(e.target.value))}
+      >
+        {options.map((option) => (
+          <option value={option} key={option}>
+            {option}
+          </option>
+        ))}
+      </select>
+      <input
+        type="text"
+        placeholder="Item..."
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+      />
+      <button>Add</button>
+    </form>
   );
 }
 
@@ -34,7 +67,7 @@ function PackingList() {
     <div className="list">
       <ul>
         {initialItems.map((item) => (
-          <Item item={item} />
+          <Item item={item} key={item.id} />
         ))}
       </ul>
     </div>
@@ -44,8 +77,11 @@ function PackingList() {
 function Item({ item }) {
   return (
     <div>
-      <li>
-        {item.description} <span>❌</span>
+      <li style={item.packed ? { textDecoration: "line-through" } : {}}>
+        <span>
+          {item.quantity} {item.description}
+          <button>❌</button>
+        </span>
       </li>
     </div>
   );
