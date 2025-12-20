@@ -39,13 +39,6 @@ function TipCalculator() {
           <Reset onReset={handleReset} />
         </>
       )}
-      {/* <h2>How did your friend like the service??</h2>
-      <select>
-        <option value="excellent">Excellent - 20%</option>
-        <option value="good">Good - 15%</option>
-        <option value="average">Average - 10%</option>
-        <option value="poor">Poor - 5%</option>
-      </select> */}
     </div>
   );
 }
@@ -63,6 +56,7 @@ function BillInput({ bill, onSetBill }) {
     </div>
   );
 }
+
 function SelectPercentage({ children, percentage, onSelect }) {
   return (
     <div>
@@ -79,6 +73,7 @@ function SelectPercentage({ children, percentage, onSelect }) {
     </div>
   );
 }
+
 function Output({ bill, tip }) {
   return (
     <div>
@@ -88,6 +83,7 @@ function Output({ bill, tip }) {
     </div>
   );
 }
+
 function Reset({ onReset }) {
   return (
     <div>
