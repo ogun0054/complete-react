@@ -96,16 +96,23 @@ function FormAddFriend() {
   const [name, setName] = useState("");
   const [image, setImage] = useState("https://i.pravatar.cc/48");
 
+  const id = crypto.randomUUID();
+
+  if (!name || !image) return;
+
   function handleSubmit(e) {
     e.preventDefault();
     const newFriend = {
+      id,
       name,
       image: `&{image}?=${id}`,
       balance: 0,
-      id: crypto.randomUUID(),
     };
 
     console.log(newFriend);
+
+    setName("");
+    setImage("https://i.pravatar.cc/48");
   }
 
   return (
